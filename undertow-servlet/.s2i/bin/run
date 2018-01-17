@@ -4,7 +4,9 @@
 args="$*"
 
 # Global S2I variable setup
-source `dirname "$0"`/s2i-setup
+#source `dirname "$0"`/s2i-setup
+source /usr/local/s2i/s2i-setup
+
 
 # Always include jolokia-opts, which can be empty if switched off via env
 export JAVA_OPTIONS="${JAVA_OPTIONS:+${JAVA_OPTIONS} }$(/opt/jolokia/jolokia-opts) $(source /opt/hawkular/hawkular-opts && get_hawkular_opts)"
