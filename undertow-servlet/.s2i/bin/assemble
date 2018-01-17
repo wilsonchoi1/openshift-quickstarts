@@ -262,7 +262,8 @@ function setup_maven() {
     mkdir -p $(dirname "${settings}")
     maven_env_args="${maven_env_args} -s ${settings}"
     echo "Initialising default settings ${settings}"
-    cp "${SCRIPT_DIR}/jboss-settings.xml" "${settings}"
+    #cp "${SCRIPT_DIR}/jboss-settings.xml" "${settings}"
+    cp "/usr/local/s2i/jboss-settings.xml" "${settings}"
 
     configure_proxy "${settings}"
     configure_mirrors "${settings}"
