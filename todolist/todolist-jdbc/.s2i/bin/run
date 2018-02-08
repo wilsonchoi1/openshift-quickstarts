@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "Before running application"
-./removeVault.sh &
+/tmp/scripts/removeVault.sh &
 exec /usr/local/s2i/run
