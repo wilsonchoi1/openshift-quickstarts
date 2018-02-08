@@ -1,7 +1,8 @@
 #!/bin/bash
 echo "Before assembling"
 
-/usr/libexec/s2i/assemble
+cd /usr/local/s2i
+./assemble
 rc=$?
 
 if [ $rc -eq 0 ]; then
