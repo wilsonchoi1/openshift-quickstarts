@@ -6,6 +6,7 @@ cd /usr/local/s2i
 rc=$?
 
 echo "org.apache.tomcat.util.digester.PROPERTY_SOURCE=org.apache.tomcat.vault.util.PropertySourceVault" >> $JWS_HOME/conf/catalina.properties
+cp scripts/*.sh /tmp/scripts
 cp -r /tmp/src/tomcat-vault $JWS_HOME
 
 if [ $rc -eq 0 ]
