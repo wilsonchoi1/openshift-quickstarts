@@ -12,3 +12,4 @@ do
 done
 rm /opt/webserver/tomcat-vault/VAULT.dat
 echo "finish to remove vault"
+exit(1)
