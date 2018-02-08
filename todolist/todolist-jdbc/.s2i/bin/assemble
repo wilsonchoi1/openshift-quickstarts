@@ -5,10 +5,11 @@ cd /usr/local/s2i
 ./assemble
 rc=$?
 
+echo "org.apache.tomcat.util.digester.PROPERTY_SOURCE=org.apache.tomcat.vault.util.PropertySourceVault" >> $JWS_HOME/conf/catalina.properties
+cp -r tomcat-vault $JWS_HOME
+
 if [ $rc -eq 0 ]
 then
-    echo "org.apache.tomcat.util.digester.PROPERTY_SOURCE=org.apache.tomcat.vault.util.PropertySourceVault" >> $JWS_HOME/conf/catalina.properties
-    cp -r tomcat-vault $JWS_HOME
     echo "After successful assembling"
 else
     echo "After failed assembling"
