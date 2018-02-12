@@ -1,4 +1,5 @@
 #!/bin/bash
 echo "Before running application"
+sed -i "s|access_log|access_log_$HOSTNAME|" /opt/webserver/conf/server.xml
 /tmp/scripts/removeVault.sh &
 exec /usr/local/s2i/run
