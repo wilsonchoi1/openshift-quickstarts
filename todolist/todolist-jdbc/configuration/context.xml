@@ -36,6 +36,4 @@
 
         <Resource name="jboss/datasources/defaultDS" auth="Container" type="javax.sql.DataSource" username="userbO5" password="${VAULT::my_block::db_password::}" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://172.30.38.31:3306/root" maxWait="10000" maxIdle="30" validationQuery="SELECT 1" testWhenIdle="true" testOnBorrow="true" factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" />
 
-<!-- ##DATASOURCES## -->
-
 </Context>
