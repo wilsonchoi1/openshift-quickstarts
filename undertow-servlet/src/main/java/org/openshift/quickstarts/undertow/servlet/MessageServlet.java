@@ -26,6 +26,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * @author Stuart Douglas
@@ -44,8 +45,11 @@ public class MessageServlet extends HttpServlet {
 
     @Override
     protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException, IOException {
+        RestTemplate restTemplate = new RestTemplate();
+        Quote quote = restTemplate.getForObject("http://gturnquist-quoters.cfapps.io/api/random", Quote.class);
         PrintWriter writer = resp.getWriter();
-        writer.write(message);
+        writer.write(message+"<br/>);
+        writer.write(quote.toString());
         writer.close();
     }
 
